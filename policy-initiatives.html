@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Policy Initiatives - Jacksonville Policy Engagement Group (JPEG)</title>
+  <style>
+    :root {
+      --primary-green: #bdcdb6;
+      --dark-blue: #2c3c44;
+      --accent-orange: #f89436;
+      --light-yellow: #fbda9e;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background-color: #f8f8f8;
+      color: var(--dark-blue);
+      line-height: 1.6;
+    }
+    
+    header {
+      background-color: var(--dark-blue);
+      color: white;
+      padding: 1rem 0;
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--light-yellow);
+    }
+    
+    .logo img {
+      max-height: 60px;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    
+    .nav-links li {
+      margin-left: 2rem;
+    }
+    
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+      font-weight: 500;
+    }
+    
+    .nav-links a:hover {
+      color: var(--accent-orange);
+    }
+    
+    .page-header {
+      background-color: var(--primary-green);
+      padding: 3rem 0;
+      text-align: center;
+    }
+    
+    .page-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .page-header p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .section {
+      padding: 4rem 0;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--dark-blue);
+    }
+    
+    .about-intro {
+      max-width: 800px;
+      margin: 0 auto 3rem;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+    
+    .initiatives-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .initiative-card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .initiative-card-content {
+      padding: 1.5rem;
+    }
+
+    .initiative-card-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--dark-blue);
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .team-member {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .team-member-image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background-color: var(--light-yellow);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    
+    .team-member-content {
+      padding: 1.5rem;
+    }
+    
+    .team-member-name {
+      font-size: 1.5rem;
+      margin-bottom: 0.25rem;
+      color: var(--dark-blue);
+    }
+    
+    .team-member-title {
+      font-size: 1rem;
+      color: var(--accent-orange);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    
+    .values-section {
+      background-color: var(--light-yellow);
+      padding: 4rem 0;
+    }
+    
+    .values-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+    
+    .partnerships-section {
+      background-color: white;
+    }
+    
+    .partners-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    
+    .partner-item {
+      padding: 1.5rem;
+      border-radius: 8px;
+      background-color: #f5f5f5;
+      text-align: center;
+    }
+    
+    .partner-name {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    footer {
+      background-color: var(--dark-blue);
+      color: white;
+      padding: 3rem 0;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+    
+    .footer-column h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: var(--light-yellow);
+    }
+    
+    .footer-column ul {
+      list-style: none;
+    }
+    
+    .footer-column ul li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer-column a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .footer-column a:hover {
+      color: var(--accent-orange);
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .social-links a {
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s;
+    }
+    
+    .social-links a:hover {
+      background-color: var(--accent-orange);
+    }
+    
+    .copyright {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .page-header h1 {
+        font-size: 2rem;
+      }
+      
+      .page-header p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <img src="/api/placeholder/150/60" alt="JPEG Logo">
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="policy-initiatives.html">Policy Initiatives</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Policy Initiatives</h1>
+      <p>Explore the issues JPEG is addressing in the community.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="about-intro">
+        <p>The Jacksonville Policy Engagement Group (JPEG) is a collective of policy professionals dedicated to improving policy outcomes for our community. We strive to empower all Jacksonville residents to be engaged in public policy through education, dialogue, and action.</p>
+      </div>
+
+      <h2 class="section-title">Our Policy Initiatives</h2>
+      <div class="initiatives-grid">
+        <div class="initiative-card">
+          <div class="initiative-card-content">
+            <h3 class="initiative-card-title">Affordable Housing</h3>
+            <p>Advocating for policies that expand access to safe and affordable housing across Jacksonville.</p>
+          </div>
+        </div>
+        <div class="initiative-card">
+          <div class="initiative-card-content">
+            <h3 class="initiative-card-title">Educational Equity</h3>
+            <p>Promoting equitable resources and opportunities for all students in our local schools.</p>
+          </div>
+        </div>
+        <div class="initiative-card">
+          <div class="initiative-card-content">
+            <h3 class="initiative-card-title">Community Safety</h3>
+            <p>Working with community partners to implement evidence-based approaches to public safety.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Jacksonville Policy Engagement Group</h3>
+          <p>Empowering all Jacksonville residents through education, dialogue, and action on public policy.</p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/jpeg_policyaction/" target="_blank">IG</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="policy-initiatives.html">Policy Initiatives</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Get Involved</h3>
+          <p>Join our newsletter to stay updated on policy matters and upcoming events.</p>
+          <form>
+            <input type="email" placeholder="Your email" style="padding: 8px; width: 100%; margin-bottom: 10px;">
+            <button type="submit" class="btn" style="width: 100%;">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Jacksonville Policy Engagement Group (JPEG). All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
