@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Jacksonville Policy Engagement Group (JPEG)</title>
+  <style>
+    :root {
+      --primary-green: #bdcdb6;
+      --dark-blue: #2c3c44;
+      --accent-orange: #f89436;
+      --light-yellow: #fbda9e;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background-color: #f8f8f8;
+      color: var(--dark-blue);
+      line-height: 1.6;
+    }
+    
+    header {
+      background-color: var(--dark-blue);
+      color: white;
+      padding: 1rem 0;
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--light-yellow);
+    }
+    
+    .logo img {
+      max-height: 60px;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    
+    .nav-links li {
+      margin-left: 2rem;
+    }
+    
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+      font-weight: 500;
+    }
+    
+    .nav-links a:hover {
+      color: var(--accent-orange);
+    }
+    
+    .page-header {
+      background-color: var(--primary-green);
+      padding: 3rem 0;
+      text-align: center;
+    }
+    
+    .page-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .page-header p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .section {
+      padding: 4rem 0;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--dark-blue);
+    }
+    
+    .about-intro {
+      max-width: 800px;
+      margin: 0 auto 3rem;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .team-member {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .team-member-image {
+      height: 300px;
+      background-color: var(--light-yellow);
+    }
+    
+    .team-member-content {
+      padding: 1.5rem;
+    }
+    
+    .team-member-name {
+      font-size: 1.5rem;
+      margin-bottom: 0.25rem;
+      color: var(--dark-blue);
+    }
+    
+    .team-member-title {
+      font-size: 1rem;
+      color: var(--accent-orange);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    
+    .values-section {
+      background-color: var(--light-yellow);
+      padding: 4rem 0;
+    }
+    
+    .values-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+    
+    .partnerships-section {
+      background-color: white;
+    }
+    
+    .partners-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    
+    .partner-item {
+      padding: 1.5rem;
+      border-radius: 8px;
+      background-color: #f5f5f5;
+      text-align: center;
+    }
+    
+    .partner-name {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    footer {
+      background-color: var(--dark-blue);
+      color: white;
+      padding: 3rem 0;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+    
+    .footer-column h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: var(--light-yellow);
+    }
+    
+    .footer-column ul {
+      list-style: none;
+    }
+    
+    .footer-column ul li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer-column a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .footer-column a:hover {
+      color: var(--accent-orange);
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .social-links a {
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s;
+    }
+    
+    .social-links a:hover {
+      background-color: var(--accent-orange);
+    }
+    
+    .copyright {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .page-header h1 {
+        font-size: 2rem;
+      }
+      
+      .page-header p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <img src="/api/placeholder/150/60" alt="JPEG Logo">
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="policy-initiatives.html">Policy Initiatives</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="get-involved.html">Get Involved</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>About JPEG</h1>
+      <p>Learn more about our mission, team, values, and partnerships.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="about-intro">
+        <p>The Jacksonville Policy Engagement Group (JPEG) is a collective of policy professionals dedicated to improving policy outcomes for our community. We strive to empower all Jacksonville residents to be engaged in public policy through education, dialogue, and action.</p>
+      </div>
+
+      <h2 class="section-title">Our Leadership Team</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <div class="team-member-image" style="background: url('/api/placeholder/400/400') center/cover no-repeat;"></div>
+          <div class="team-member-content">
+            <h3 class="team-member-name">Rhianna Scyster</h3>
+            <p class="team-member-title">Founder and Director of Strategy</p>
+            <p>Rhianna's elevated experiences & passion for community service have developed Rhianna's expertise on the impact of empowering differences and advocating for equity. She is dedicated to improving Jacksonville through social justice, policy development, and servant leadership.</p>
+            <p>Outside of work, Rhianna enjoys spending time reading fiction, writing, and spending time with her daughter and husband.</p>
+          </div>
+        </div>
+
+        <div class="team-member">
+          <div class="team-member-image" style="background: url('/api/placeholder/400/440') center/cover no-repeat;"></div>
+          <div class="team-member-content">
+            <h3 class="team-member-name">Ronaldo Horn</h3>
+            <p class="team-member-title">Director of Data and Communications</p>
+            <p>Renaldo's hard work and dedication has led him to numerous leadership roles. He believes that good public policy and meaningful action are the tools needed to continue Jacksonville's improvement. He looks forward to furthering his education and building meaningful connections with those who want to make a positive impact.</p>
+          </div>
+        </div>
+
+        <div class="team-member">
+          <div class="team-member-image" style="background: url('/api/placeholder/400/420') center/cover no-repeat;"></div>
+          <div class="team-member-content">
+            <h3 class="team-member-name">T. Latrice Carmichael</h3>
+            <p class="team-member-title">Director of Community Engagement</p>
+            <p>T. Latrice's commitment to improving her community has created a path where her unique leadership capabilities are celebrated. Her knowledge, organization skills, and warm personality are a perfect fit for civic engagement in both educational and government spaces. She is the definition of a servant-leader and loves spending time with her family.</p>
+          </div>
+        </div>
+
+        <div class="team-member">
+          <div class="team-member-image" style="background: url('/api/placeholder/400/400') center/cover no-repeat;"></div>
+          <div class="team-member-content">
+            <h3 class="team-member-name">Monique Stewart</h3>
+            <p class="team-member-title">Director of Development</p>
+            <p>Monique Stewart is a dynamic and results-oriented professional with extensive experience in strategic planning, leadership development, and community engagement.</p>
+            <p>Her professional development includes participation in the AmpEd National Fellowship, serving as a board member and Diversity Chair for the Association of Fundraising Professionals (AFP), and obtaining a Certificate in Volunteer Management from Rollins College.</p>
+            <p>Monique is passionate about fostering inclusive and supportive environments for all community members.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="values-section">
+    <div class="container">
+      <h2 class="section-title">Our Values and Principles</h2>
+      <div class="values-content">
+        <p>As public policy professionals, we aim to empower all Jacksonville residents to be engaged in Public Policy through education, dialogue, and action.</p>
+        <p>We believe that informed citizens, critical conversations, and coordinated community efforts are essential for creating equitable and sustainable outcomes for underrepresented and historically marginalized communities.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section partnerships-section">
+    <div class="container">
+      <h2 class="section-title">Our Partnerships</h2>
+      <div class="partners-list">
+        <div class="partner-item">
+          <h3 class="partner-name">Dr. Nadine Ebri</h3>
+          <p>Ebri Education</p>
+        </div>
+        <div class="partner-item">
+          <h3 class="partner-name">Warren Jones</h3>
+          <p>Former City Council President</p>
+        </div>
+        <div class="partner-item">
+          <h3 class="partner-name">Yanira Cardona</h3>
+          <p>Hispanic Outreach Coordinator City of Jacksonville</p>
+        </div>
+        <div class="partner-item">
+          <h3 class="partner-name">Jimmy Peluso</h3>
+          <p>Jacksonville City Councilman District 7</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Jacksonville Policy Engagement Group</h3>
+          <p>Empowering all Jacksonville residents through education, dialogue, and action on public policy.</p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/jpeg_policyaction/" target="_blank">IG</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="policy-initiatives.html">Policy Initiatives</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="get-involved.html">Get Involved</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Get Involved</h3>
+          <p>Join our newsletter to stay updated on policy matters and upcoming events.</p>
+          <form>
+            <input type="email" placeholder="Your email" style="padding: 8px; width: 100%; margin-bottom: 10px;">
+            <button type="submit" class="btn" style="width: 100%;">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Jacksonville Policy Engagement Group (JPEG). All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
